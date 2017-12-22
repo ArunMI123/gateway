@@ -1,0 +1,32 @@
+﻿{
+  "ReRoutes": [
+    {
+      "DownstreamPathTemplate": "/api/Account/Token",
+      "DownstreamScheme": "http",
+      "DownstreamHost": "dashboard-svc",
+      "DownstreamPort": 80,
+      "UpstreamPathTemplate": "/Account/{everything}"
+      //"UpstreamHttpMethod": [ "Get" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/Request/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHost": "dashboard-svc",
+      "DownstreamPort": 80,
+      "UpstreamPathTemplate": "/Request/{everything}"
+      //"UpstreamHttpMethod": [ "Get" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/User/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamPort": 80,
+      "DownstreamHost": "user-svc",
+      "UpstreamPathTemplate": "/User/{everything}"
+      //"UpstreamHttpMethod": [ "Get" ]
+    }
+  ],
+  "GlobalConfiguration": {
+    "RequestIdKey": "OcRequestId",
+    "AdministrationPath": "/administration"
+  }
+}  
